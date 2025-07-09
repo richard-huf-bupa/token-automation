@@ -7,7 +7,7 @@
     "dev": "remix vite:dev",
     "tokens:import:colour": "npx tsx ./src/syncFigmaToTokens.ts -- --output src/tokens/colour",
     "tokens:import:palette": "npx tsx ./src/syncFigmaToTokens.ts -- --isPalette=true --output src/tokens/palette",
-    "tokens:import": "npx tokens:import:palette && npx tokens:import:colour",
+    "tokens:import": "yarn tokens:import:palette && yarn tokens:import:colour",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "tsc",
     "prepare": "husky"
