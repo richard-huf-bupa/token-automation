@@ -24,7 +24,7 @@ function tokenValueFromVariable(
   if (typeof value === 'object') {
     if ('type' in value && value.type === 'VARIABLE_ALIAS') {
       const aliasedVariable = localVariables[value.id]
-      return `{${aliasedVariable.name.replace(/\//g, '.')}}`
+      return `{${aliasedVariable?.name.replace(/\//g, '.')}}`
     } else if ('r' in value) {
       return rgbToHex(value)
     }
@@ -38,6 +38,13 @@ function tokenValueFromVariable(
 export function tokenFilesFromLocalVariables(localVariablesResponse: GetLocalVariablesResponse) {
   const tokenFiles: { [fileName: string]: TokensFile } = {}
   const localVariableCollections = localVariablesResponse.meta.variableCollections
+  console.log('localVariableCollections', localVariableCollections);
+  // const targetCollections = localVariableCollections.reduce((accumulator, currentValue) => {
+
+  // }, []);
+
+  // TODO: filter collections to exclude hiddenFromPublishing: true and take a collection name.
+
   const localVariables = localVariablesResponse.meta.variables
 
   Object.values(localVariables).forEach((variable) => {
