@@ -40,3 +40,7 @@ It also generates the design tokens in the `dist` directory. Tokens are built in
 - Javascript
 - Flutter (dart)
 - JSON
+
+### App
+
+There's a remix app in the `app` directory. It was added in the POC to display and validate tokens. It's incomplete. You can ignore it for now.
