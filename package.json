@@ -7,7 +7,7 @@
     "dev": "remix vite:dev",
     "tokens:import:colour": "npx tsx ./src/syncFigmaToTokens.ts -- --output src/tokens/colour",
     "tokens:import:palette": "npx tsx ./src/syncFigmaToTokens.ts -- --isPalette=true --output src/tokens/palette",
-    "tokens:import": "yarn tokens:import:palette && yarn tokens:import:colour",
+    "tokens:build": "yarn tokens:import:palette && yarn tokens:import:colour && node ./src/build.mjs",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "typecheck": "tsc",
     "prepare": "husky"
@@ -63,5 +63,6 @@
   },
   "engines": {
     "node": ">=22.12.0"
-  }
+  },
+  "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
 }
