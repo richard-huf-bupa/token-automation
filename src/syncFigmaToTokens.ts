@@ -9,10 +9,10 @@ import { tokenFilesFromLocalVariables } from './token_export.js'
 /**
  * Usage:
  *
- * // Defaults to writing to the tokens_new directory
+ * Defaults to writing to the tokens_new directory
  * npm run sync-figma-to-tokens
  *
- * // Writes to the specified directory
+ * Writes to the specified directory
  * npm run sync-figma-to-tokens -- --output directory_name
  */
 

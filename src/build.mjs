@@ -1,6 +1,6 @@
 import StyleDictionary from 'style-dictionary';
 
-const BUILD_DIR = 'build-tokens/';
+const BUILD_DIR = 'dist/';
 
 const sd = new StyleDictionary({
   log: {
@@ -15,7 +15,7 @@ const sd = new StyleDictionary({
       buildPath: BUILD_DIR,
       files: [
         {
-          destination: 'variables.css',
+          destination: 'tokens.css',
           format: 'css/variables',
           options: {
             outputReferences: true
@@ -25,7 +25,7 @@ const sd = new StyleDictionary({
     },
     js: {
       transformGroup: "js",
-      buildPath: '../build/',
+      buildPath: BUILD_DIR,
       files: [
         {
           format: "javascript/es6",
@@ -52,7 +52,7 @@ const sd = new StyleDictionary({
       buildPath: BUILD_DIR,
       files: [
         {
-          destination: "style_dictionary.dart",
+          destination: "tokens.dart",
           format: "flutter/class.dart",
           options: {
             className: "StyleDictionary"
