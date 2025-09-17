@@ -1628,6 +1628,20 @@
           }
         }
       },
+      "contrast": {
+        "$type": "color",
+        "$value": "{palette.ink.500}",
+        "$description": "",
+        "$extensions": {
+          "com.figma": {
+            "hiddenFromPublishing": false,
+            "scopes": [
+              "TEXT_FILL"
+            ],
+            "codeSyntax": {}
+          }
+        }
+      },
       "weak": {
         "default": {
           "$type": "color",
@@ -1669,20 +1683,6 @@
               ],
               "codeSyntax": {}
             }
-          }
-        }
-      },
-      "contrast": {
-        "$type": "color",
-        "$value": "{palette.ink.500}",
-        "$description": "",
-        "$extensions": {
-          "com.figma": {
-            "hiddenFromPublishing": false,
-            "scopes": [
-              "TEXT_FILL"
-            ],
-            "codeSyntax": {}
           }
         }
       }
