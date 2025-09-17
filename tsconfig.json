@@ -1,20 +1,41 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es2015",
     "sourceMap": true,
-    "moduleResolution": "node16",
-    "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "strict": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noUnusedParameters": true,
     "noEmitOnError": true,
     "removeComments": true,
-    "skipLibCheck": true
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    // "types": [],
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+
+    // Vite takes care of building everything, not tsc.
+    "noEmit": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/.server/**/*.ts",
+    "**/.server/**/*.tsx",
+    "**/.client/**/*.ts",
+    "**/.client/**/*.tsx"
+  ]
 }

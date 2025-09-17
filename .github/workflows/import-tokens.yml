@@ -1,4 +1,4 @@
-name: Export tokens
+name: Import tokens
 on: workflow_dispatch
 
 jobs:
@@ -23,8 +23,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Sync variables in Figma file to tokens
-        run: npm run tokens:import
+      - name: Import palette tokens
+        run: npm run tokens:import:palette
+        env:
+          TOKENS_FILE_ID: ${{ vars.TOKENS_FILE_ID }}
+          PALETTE_FILE_ID: ${{ vars.PALETTE_FILE_ID }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
+      - name: Import colour tokens
+        run: npm run tokens:import:colour
         env:
           TOKENS_FILE_ID: ${{ vars.TOKENS_FILE_ID }}
           PALETTE_FILE_ID: ${{ vars.PALETTE_FILE_ID }}

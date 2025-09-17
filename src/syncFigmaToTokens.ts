@@ -17,15 +17,15 @@ import { tokenFilesFromLocalVariables } from './token_export.js'
  */
 
 async function main() {
-  if (!process.env.PERSONAL_ACCESS_TOKEN || !process.env.TOKEN_TOKEN_FILE_ID || !process.env.PALETTE_TOKEN_FILE_ID) {
-    throw new Error('PERSONAL_ACCESS_TOKEN and TOKEN_FILE_ID environemnt variables are required')
+  if (!process.env.PERSONAL_ACCESS_TOKEN || !process.env.TOKENS_FILE_ID || !process.env.PALETTE_FILE_ID) {
+    throw new Error('PERSONAL_ACCESS_TOKEN and TOKENS_FILE_ID environemnt variables are required')
   }
-  const TOKEN_FILE_IDS = [
-    process.env.TOKEN_FILE_ID,
-    process.env.PALETTE_TOKEN_FILE_ID
+  const FILE_IDS = [
+    process.env.TOKENS_FILE_ID,
+    process.env.PALETTE_FILE_ID
   ];
 
-  for (let fileId of TOKEN_FILE_IDS) {
+  for (let fileId of FILE_IDS) {
 
     const api = new FigmaApi(process.env.PERSONAL_ACCESS_TOKEN)
     const localVariables = await api.getLocalVariables(fileId)
